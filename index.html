@@ -25,9 +25,6 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
   .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;gap:6px;}
   .card-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1;}
-  .photo-wrap{width:100%;aspect-ratio:1/1;background:#0b0d11;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .photo-wrap img{width:100%;height:100%;object-fit:cover;}
-  .photo-placeholder{color:var(--card-border);font-size:2.4rem;}
   .inspired{color:var(--muted);font-size:0.78rem;font-style:italic;}
   .inspired b{color:var(--text);font-style:normal;}
   .brand{color:var(--accent);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:600;}
@@ -49,6 +46,11 @@
     <select id="popularFilter">
       <option value="">Todos los productos</option>
       <option value="popular">Solo vendidos antes</option>
+    </select>
+    <select id="sortOrder">
+      <option value="">Sin orden</option>
+      <option value="asc">Precio: menor a mayor</option>
+      <option value="desc">Precio: mayor a menor</option>
     </select>
   </div>
   <div class="count" id="count"></div>
@@ -86,12 +88,20 @@ function render(){
   const empty = document.getElementById('empty');
   grid.innerHTML = '';
 
+  const sortOrder = document.getElementById('sortOrder').value;
+
   const filtered = ITEMS.filter(it => {
     if(brand && it.section !== brand) return false;
     if(popularOnly && !(it.veces_vendido > 0)) return false;
     if(q && !(it.name.toLowerCase().includes(q) || it.section.toLowerCase().includes(q))) return false;
     return true;
   });
+
+  if(sortOrder === 'asc'){
+    filtered.sort((a,b) => a.ars - b.ars);
+  } else if(sortOrder === 'desc'){
+    filtered.sort((a,b) => b.ars - a.ars);
+  }
 
   document.getElementById('count').textContent = filtered.length + ' productos';
   empty.style.display = filtered.length ? 'none' : 'block';
@@ -100,20 +110,6 @@ function render(){
   for(const it of filtered){
     const card = document.createElement('div');
     card.className = 'card';
-
-    const photoWrap = document.createElement('div');
-    photoWrap.className = 'photo-wrap';
-    if(it.foto){
-      const img = document.createElement('img');
-      img.src = it.foto;
-      img.alt = cleanName(it.name);
-      img.loading = 'lazy';
-      img.onerror = () => { photoWrap.innerHTML = '<span class="photo-placeholder">&#9925;</span>'; };
-      photoWrap.appendChild(img);
-    } else {
-      photoWrap.innerHTML = '<span class="photo-placeholder">&#9925;</span>';
-    }
-    card.appendChild(photoWrap);
 
     const body = document.createElement('div');
     body.className = 'card-body';
@@ -184,6 +180,7 @@ fetch('data/catalog.json')
 document.getElementById('search').addEventListener('input', render);
 document.getElementById('brand').addEventListener('change', render);
 document.getElementById('popularFilter').addEventListener('change', render);
+document.getElementById('sortOrder').addEventListener('change', render);
 </script>
 </body>
 </html>
