@@ -18,15 +18,23 @@
     background:var(--card);border:1px solid var(--card-border);color:var(--text);
     padding:10px 12px;border-radius:8px;font-size:0.95rem;
   }
-  input[type=text]{flex:1;min-width:200px;}
+  input[type=text]{flex:1;min-width:180px;}
+  #popularFilter{min-width:170px;}
   .count{color:var(--muted);font-size:0.85rem;margin-top:8px;}
   main{padding:20px;max-width:1200px;margin:0 auto;}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
-  .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px;}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;gap:6px;}
+  .card-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .photo-wrap{width:100%;aspect-ratio:1/1;background:#0b0d11;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;}
+  .photo-placeholder{color:var(--card-border);font-size:2.4rem;}
+  .inspired{color:var(--muted);font-size:0.78rem;font-style:italic;}
+  .inspired b{color:var(--text);font-style:normal;}
   .brand{color:var(--accent);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:600;}
   .name{font-size:0.98rem;font-weight:600;line-height:1.3;min-height:2.5em;}
   .meta{color:var(--muted);font-size:0.82rem;display:flex;gap:6px;flex-wrap:wrap;}
   .tag{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:2px 7px;font-size:0.72rem;}
+  .tag.popular{background:#1c3a2e;color:#6fcf97;}
   .price{margin-top:auto;font-size:1.15rem;font-weight:700;color:#fff;padding-top:6px;}
   footer{text-align:center;color:var(--muted);font-size:0.8rem;padding:30px 20px;}
   .empty{color:var(--muted);text-align:center;padding:60px 20px;}
@@ -38,6 +46,10 @@
   <div class="controls">
     <input type="text" id="search" placeholder="Buscar perfume o marca...">
     <select id="brand"><option value="">Todas las marcas</option></select>
+    <select id="popularFilter">
+      <option value="">Todos los productos</option>
+      <option value="popular">Solo vendidos antes</option>
+    </select>
   </div>
   <div class="count" id="count"></div>
 </header>
@@ -69,12 +81,14 @@ function cleanName(name){
 function render(){
   const q = document.getElementById('search').value.trim().toLowerCase();
   const brand = document.getElementById('brand').value;
+  const popularOnly = document.getElementById('popularFilter').value === 'popular';
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
   grid.innerHTML = '';
 
   const filtered = ITEMS.filter(it => {
     if(brand && it.section !== brand) return false;
+    if(popularOnly && !(it.veces_vendido > 0)) return false;
     if(q && !(it.name.toLowerCase().includes(q) || it.section.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -86,6 +100,23 @@ function render(){
   for(const it of filtered){
     const card = document.createElement('div');
     card.className = 'card';
+
+    const photoWrap = document.createElement('div');
+    photoWrap.className = 'photo-wrap';
+    if(it.foto){
+      const img = document.createElement('img');
+      img.src = it.foto;
+      img.alt = cleanName(it.name);
+      img.loading = 'lazy';
+      img.onerror = () => { photoWrap.innerHTML = '<span class="photo-placeholder">&#9925;</span>'; };
+      photoWrap.appendChild(img);
+    } else {
+      photoWrap.innerHTML = '<span class="photo-placeholder">&#9925;</span>';
+    }
+    card.appendChild(photoWrap);
+
+    const body = document.createElement('div');
+    body.className = 'card-body';
 
     const brandEl = document.createElement('div');
     brandEl.className = 'brand';
@@ -113,15 +144,26 @@ function render(){
       const t = document.createElement('span'); t.className='tag'; t.textContent = 'Tester';
       metaEl.appendChild(t);
     }
+    if(it.veces_vendido && it.veces_vendido > 0){
+      const t = document.createElement('span'); t.className='tag popular'; t.textContent = 'Vendido antes';
+      metaEl.appendChild(t);
+    }
 
     const priceEl = document.createElement('div');
     priceEl.className = 'price';
     priceEl.textContent = '$' + fmt.format(it.ars);
 
-    card.appendChild(brandEl);
-    card.appendChild(nameEl);
-    card.appendChild(metaEl);
-    card.appendChild(priceEl);
+    body.appendChild(brandEl);
+    body.appendChild(nameEl);
+    body.appendChild(metaEl);
+    if(it.inspirado_en){
+      const insp = document.createElement('div');
+      insp.className = 'inspired';
+      insp.innerHTML = 'Se parece a: <b>' + it.inspirado_en + '</b>';
+      body.appendChild(insp);
+    }
+    body.appendChild(priceEl);
+    card.appendChild(body);
     frag.appendChild(card);
   }
   grid.appendChild(frag);
@@ -141,6 +183,7 @@ fetch('data/catalog.json')
 
 document.getElementById('search').addEventListener('input', render);
 document.getElementById('brand').addEventListener('change', render);
+document.getElementById('popularFilter').addEventListener('change', render);
 </script>
 </body>
 </html>
