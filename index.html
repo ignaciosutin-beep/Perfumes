@@ -36,6 +36,22 @@
   footer{text-align:center;color:var(--muted);font-size:0.8rem;padding:30px 20px;}
   .empty{color:var(--muted);text-align:center;padding:60px 20px;}
 
+  @media (max-width: 480px){
+    header{padding:12px 14px;}
+    h1{font-size:1.2rem;margin-bottom:8px;}
+    main{padding:10px;}
+    .grid{grid-template-columns:repeat(2, 1fr);gap:8px;}
+    .card-body{padding:9px;gap:4px;}
+    .name{font-size:0.78rem;min-height:2.1em;line-height:1.25;}
+    .brand{font-size:0.62rem;}
+    .meta{font-size:0.68rem;gap:4px;}
+    .tag{padding:1px 5px;font-size:0.62rem;}
+    .price{font-size:0.95rem;}
+    .add-btn{padding:7px 0;font-size:0.75rem;}
+    .cart-fab{padding:11px 16px;font-size:0.85rem;bottom:14px;right:14px;}
+    .inspired{font-size:0.68rem;}
+  }
+
   .add-btn{margin-top:8px;background:var(--accent);color:#1a1a1a;border:none;border-radius:8px;padding:9px 0;font-weight:700;font-size:0.85rem;cursor:pointer;}
   .add-btn:active{opacity:0.8;}
 
@@ -146,6 +162,29 @@ function cleanName(name){
   return name.replace(/\(CAJA TESTER\)/i,'').replace(/\(TESTER SIN CAJA\)/i,'').trim();
 }
 
+// Título corto para la tarjeta: saca concentración, tamaño y, si dice "BY <marca>",
+// usa esa marca para mostrar en vez de la sección del PDF. El nombre completo
+// (it.name) sigue siendo el que se manda al carrito / Google Sheets, sin tocar.
+function shortTitle(it){
+  let s = cleanName(it.name);
+  let brandOverride = null;
+
+  const byMatch = s.match(/\bBY\s+([A-ZÀ-Ü0-9&.'´\- ]+?)(\s+(EDP|EDT|EDC|EDY|PARFUM|EXTRAIT).*|\s*\(.*\)|\s*\d.*)?$/i);
+  if(byMatch && byMatch[1] && byMatch[1].trim().length > 1){
+    brandOverride = byMatch[1].trim();
+    s = s.slice(0, byMatch.index).trim();
+  }
+
+  s = s.replace(/\b(EXTRAIT DE PARFUM|EXTRAIT|PARFUM|EDP|EDT|EDC|EDY)\b/gi, ' ');
+  s = s.replace(/\d+(\.\d+)?\s*ML\b/gi, ' ');
+  s = s.replace(/\s{2,}/g, ' ').trim();
+  s = s.replace(/[-,]+$/, '').trim();
+
+  if(!s) s = cleanName(it.name); // fallback si quedó vacío
+
+  return { title: s, brandOverride };
+}
+
 function render(){
   const q = document.getElementById('search').value.trim().toLowerCase();
   const brand = document.getElementById('brand').value;
@@ -180,13 +219,16 @@ function render(){
     const body = document.createElement('div');
     body.className = 'card-body';
 
+    const { title, brandOverride } = shortTitle(it);
+
     const brandEl = document.createElement('div');
     brandEl.className = 'brand';
-    brandEl.textContent = it.section;
+    brandEl.textContent = brandOverride || it.section;
 
     const nameEl = document.createElement('div');
     nameEl.className = 'name';
-    nameEl.textContent = cleanName(it.name);
+    nameEl.textContent = title;
+    nameEl.title = cleanName(it.name); // nombre completo al pasar el mouse
 
     const metaEl = document.createElement('div');
     metaEl.className = 'meta';
