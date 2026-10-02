@@ -301,6 +301,102 @@
  },
  {
   "section": "Varios",
+  "name": "STALLION 53 9 TO 9 EDP 100ML + EDP 20ML",
+  "ars": 63000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 INTENSO EDP 100ML + EDP 20ML",
+  "ars": 63000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 GREEN SUBLIME EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 MANGOFIZZ EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 LAHAB EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 IMPERIAL EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 CLUB 09 EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "STALLION 53 LA FURIA EDP 100ML + EDP 20ML",
+  "ars": 68000,
+  "ml": 100.0,
+  "concentracion": "EDP",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
   "name": "KIT MI ACORDE ERES TU BY ALEJANDRO SANZ FEM EDT 80ML + LOTION 100ML",
   "ars": 47000,
   "ml": 80.0,
@@ -734,7 +830,7 @@
  {
   "section": "Varios",
   "name": "STRONGER WITH YOU INTENSELY BY EMPORIO ARMANI EDP 100ML",
-  "ars": 177000,
+  "ars": 168000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -1322,7 +1418,7 @@
  {
   "section": "Varios",
   "name": "ETERNITY FEM EDP 100ML BY CALVIN KLEIN",
-  "ars": 90000,
+  "ars": 92000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -3073,6 +3169,30 @@
  },
  {
   "section": "Varios",
+  "name": "LORENZO PAZZAGLIA EXTRAIT 50ML QUE CHIMBA",
+  "ars": 245000,
+  "ml": 50.0,
+  "concentracion": "EXTRAIT",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
+  "name": "LORENZO PAZZAGLIA EXTRAIT 50ML BLOODY SMOKE",
+  "ars": 225000,
+  "ml": 50.0,
+  "concentracion": "EXTRAIT",
+  "kit": false,
+  "tester": false,
+  "foto": null,
+  "inspirado_en": null,
+  "veces_vendido": 0
+ },
+ {
+  "section": "Varios",
   "name": "VIBRATO EDP 100ML BY SOSPIRO (CAJA TESTER)",
   "ars": 408000,
   "ml": 100.0,
@@ -3098,7 +3218,7 @@
  {
   "section": "Varios",
   "name": "WORLD CUP BY ZAKAT EDP 80ML",
-  "ars": 98000,
+  "ars": 90000,
   "ml": 80.0,
   "concentracion": "EDP",
   "kit": false,
@@ -3110,7 +3230,7 @@
  {
   "section": "Varios",
   "name": "WORLD CUP VIP BY ZAKAT EDP 80ML",
-  "ars": 98000,
+  "ars": 90000,
   "ml": 80.0,
   "concentracion": "EDP",
   "kit": false,
@@ -3374,7 +3494,7 @@
  {
   "section": "Varios",
   "name": "DIOR SAUVAGE EDP 100ML",
-  "ars": 194000,
+  "ars": 229000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -3386,7 +3506,7 @@
  {
   "section": "Varios",
   "name": "DIOR SAUVAGE EDT 100ML",
-  "ars": 184000,
+  "ars": 190000,
   "ml": 100.0,
   "concentracion": "EDT",
   "kit": false,
@@ -3878,7 +3998,7 @@
  {
   "section": "Varios",
   "name": "MAST PERFUME ROME LA BOMBA EDP 100ML",
-  "ars": 98000,
+  "ars": 93000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -7409,7 +7529,7 @@
  {
   "section": "French Avenue",
   "name": "KIT GENESIS ZODIACO 12 X 30 ML EDP",
-  "ars": 225000,
+  "ars": 241000,
   "ml": 30.0,
   "concentracion": "EDP",
   "kit": true,
@@ -7493,7 +7613,7 @@
  {
   "section": "French Avenue",
   "name": "COCOA MORADO EDP 100ML",
-  "ars": 75000,
+  "ars": 71000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -8825,7 +8945,7 @@
  {
   "section": "Grandeur",
   "name": "TUBBEES EDP 50ML STRAWBERRY CHEESECAKE",
-  "ars": 47000,
+  "ars": 53000,
   "ml": 50.0,
   "concentracion": "EDP",
   "kit": false,
@@ -8873,7 +8993,7 @@
  {
   "section": "Grandeur",
   "name": "TUBBEES EDP 50ML UNICORN VANILLA",
-  "ars": 47000,
+  "ars": 54000,
   "ml": 50.0,
   "concentracion": "EDP",
   "kit": false,
@@ -9260,7 +9380,7 @@
  {
   "section": "Fragrance World",
   "name": "ELYSIA LYCHEE FIZZ EDP 100ML",
-  "ars": 68000,
+  "ars": 62000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -10418,7 +10538,7 @@
  {
   "section": "Jo Milano Paris",
   "name": "GAME OF SPADES EDP 100ML MOON",
-  "ars": 129000,
+  "ars": 132000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -10622,7 +10742,7 @@
  {
   "section": "Xerjoff",
   "name": "ERBA GOLD 100ML",
-  "ars": 347000,
+  "ars": 327000,
   "ml": 100.0,
   "concentracion": null,
   "kit": false,
@@ -10766,7 +10886,7 @@
  {
   "section": "Xerjoff",
   "name": "TORINO 21 EDP 100ML",
-  "ars": 368000,
+  "ars": 337000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -11078,7 +11198,7 @@
  {
   "section": "Rayhaan",
   "name": "RAYHAAN TERRA EDP 100ML",
-  "ars": 88000,
+  "ars": 74000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -11624,7 +11744,7 @@
  {
   "section": "Lattafa",
   "name": "BADEE AL OUD SUBLIME EDP 100ML",
-  "ars": 66000,
+  "ars": 71000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -12074,7 +12194,7 @@
  {
   "section": "Lattafa",
   "name": "RAMZ SILVER EDP 100ML",
-  "ars": 55000,
+  "ars": 56000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -12356,7 +12476,7 @@
  {
   "section": "Lattafa",
   "name": "ISHQ AL SHUYUKH SILVER EDP 100ML",
-  "ars": 69000,
+  "ars": 68000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -12512,7 +12632,7 @@
  {
   "section": "Lattafa",
   "name": "ECLAIRE EDP 100ML",
-  "ars": 92000,
+  "ars": 94000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -12569,7 +12689,7 @@
  {
   "section": "Lattafa",
   "name": "HAYA EDP 100ML",
-  "ars": 73000,
+  "ars": 75000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -13634,7 +13754,7 @@
  {
   "section": "Lattafa",
   "name": "ART OF UNIVERSE EDP 100ML",
-  "ars": 89000,
+  "ars": 102000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -13955,7 +14075,7 @@
  {
   "section": "Lattafa",
   "name": "KIT VINTAGE RADIO EDP 100ML + EDP 20ML + DEO SPRAY 200ML + DECANT VACIO",
-  "ars": 122000,
+  "ars": 85000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": true,
@@ -14486,7 +14606,7 @@
  {
   "section": "Lattafa",
   "name": "KIT ART OF UNIVERSE EDP 100ML + DEO SPRAY 200ML + EDP 20ML",
-  "ars": 98000,
+  "ars": 107000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": true,
@@ -14498,7 +14618,7 @@
  {
   "section": "Lattafa",
   "name": "KIT ART OF NATURE I EDP 100ML + DEO SPRAY 200ML + EDP 20ML",
-  "ars": 86000,
+  "ars": 87000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": true,
@@ -14510,7 +14630,7 @@
  {
   "section": "Lattafa",
   "name": "KIT ART OF NATURE II EDP 100ML + DEO SPRAY 200ML + EDP 20ML",
-  "ars": 86000,
+  "ars": 87000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": true,
@@ -14534,7 +14654,7 @@
  {
   "section": "Lattafa",
   "name": "KIT QUEEN OF ARABIA EDP 100ML + DEO SPRAY 200ML + EDP 20ML",
-  "ars": 96000,
+  "ars": 132000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": true,
@@ -14672,7 +14792,7 @@
  {
   "section": "Lattafa",
   "name": "YARA ELIXIR EDP 100ML",
-  "ars": 76000,
+  "ars": 75000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -15602,7 +15722,7 @@
  {
   "section": "Maison Alhambra",
   "name": "INTRUDE EDP 100ML",
-  "ars": 58000,
+  "ars": 59000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -15643,7 +15763,7 @@
  },
  {
   "section": "Maison Alhambra",
-  "name": "JEAN LOWE OMBRE EDP 100ML (AHORA SE LLAMA NOIR)",
+  "name": "JEAN LOWE NOIR EDP 100ML",
   "ars": 64000,
   "ml": 100.0,
   "concentracion": "EDP",
@@ -16337,7 +16457,7 @@
  {
   "section": "Maison Alhambra",
   "name": "GLACIER BELLA EDP 100ML",
-  "ars": 67000,
+  "ars": 60000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -16403,7 +16523,7 @@
  {
   "section": "Maison Alhambra",
   "name": "YEAH! EDP 100ML",
-  "ars": 59000,
+  "ars": 68000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -16793,7 +16913,7 @@
  {
   "section": "Armaf",
   "name": "CLUB DE NUIT INTENSE OVERDOSE EXTRAIT 100ML",
-  "ars": 105000,
+  "ars": 102000,
   "ml": 100.0,
   "concentracion": "EXTRAIT",
   "kit": false,
@@ -16916,7 +17036,7 @@
  {
   "section": "Armaf",
   "name": "CLUB DE NUIT URBAN MAN ELIXIR EDP 105ML",
-  "ars": 94000,
+  "ars": 88000,
   "ml": 105.0,
   "concentracion": "EDP",
   "kit": false,
@@ -16946,7 +17066,7 @@
  {
   "section": "Armaf",
   "name": "CLUB DE NUIT UNTOLD EDP 105ML",
-  "ars": 85000,
+  "ars": 87000,
   "ml": 105.0,
   "concentracion": "EDP",
   "kit": false,
@@ -17081,7 +17201,7 @@
  {
   "section": "Armaf",
   "name": "CLUB DE NUIT MALEKA EDP 105ML",
-  "ars": 86000,
+  "ars": 85000,
   "ml": 105.0,
   "concentracion": "EDP",
   "kit": false,
@@ -17255,7 +17375,7 @@
  {
   "section": "Armaf",
   "name": "ODYSSEY MANDARIN SKY VINTAGE EDITION EDP 100ML",
-  "ars": 85000,
+  "ars": 84000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -17423,7 +17543,7 @@
  {
   "section": "Armaf",
   "name": "ODYSSEY AQUA EDP 100ML",
-  "ars": 78000,
+  "ars": 73000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
@@ -19172,7 +19292,7 @@
  {
   "section": "Afnan",
   "name": "SUPREMACY COLLECTOR'S EDITION EDP 100ML",
-  "ars": 124000,
+  "ars": 122000,
   "ml": 100.0,
   "concentracion": "EDP",
   "kit": false,
