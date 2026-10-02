@@ -91,6 +91,18 @@
       <option value="">Con o sin inspiración</option>
       <option value="inspired">Solo "se parece a..."</option>
     </select>
+    <select id="genderFilter">
+      <option value="">Todos los géneros</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="Unisex">Unisex</option>
+    </select>
+    <select id="seasonFilter">
+      <option value="">Toda temporada</option>
+      <option value="Verano">Verano</option>
+      <option value="Otoño/Invierno">Otoño / Invierno</option>
+      <option value="Todo el año">Todo el año</option>
+    </select>
     <select id="sortOrder">
       <option value="">Sin orden</option>
       <option value="asc">Precio: menor a mayor</option>
@@ -194,6 +206,8 @@ function render(){
   const brand = document.getElementById('brand').value;
   const popularOnly = document.getElementById('popularFilter').value === 'popular';
   const inspiredOnly = document.getElementById('inspiredFilter').value === 'inspired';
+  const genderValue = document.getElementById('genderFilter').value;
+  const seasonValue = document.getElementById('seasonFilter').value;
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
   grid.innerHTML = '';
@@ -204,6 +218,8 @@ function render(){
     if(brand && it.section !== brand) return false;
     if(popularOnly && !(it.veces_vendido > 0)) return false;
     if(inspiredOnly && !it.inspirado_en) return false;
+    if(genderValue && it.genero !== genderValue) return false;
+    if(seasonValue && it.temporada !== seasonValue) return false;
     if(q && !(it.name.toLowerCase().includes(q) || it.section.toLowerCase().includes(q) || (it.inspirado_en && it.inspirado_en.toLowerCase().includes(q)))) return false;
     return true;
   });
@@ -258,6 +274,14 @@ function render(){
       const t = document.createElement('span'); t.className='tag popular'; t.textContent = 'Vendido antes';
       metaEl.appendChild(t);
     }
+    if(it.genero){
+      const t = document.createElement('span'); t.className='tag'; t.textContent = it.genero;
+      metaEl.appendChild(t);
+    }
+    if(it.temporada){
+      const t = document.createElement('span'); t.className='tag'; t.textContent = it.temporada;
+      metaEl.appendChild(t);
+    }
 
     const priceEl = document.createElement('div');
     priceEl.className = 'price';
@@ -302,6 +326,8 @@ document.getElementById('search').addEventListener('input', render);
 document.getElementById('brand').addEventListener('change', render);
 document.getElementById('popularFilter').addEventListener('change', render);
 document.getElementById('inspiredFilter').addEventListener('change', render);
+document.getElementById('genderFilter').addEventListener('change', render);
+document.getElementById('seasonFilter').addEventListener('change', render);
 document.getElementById('sortOrder').addEventListener('change', render);
 
 // ---------- Carrito ----------
