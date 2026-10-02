@@ -270,8 +270,8 @@ function render(){
       const t = document.createElement('span'); t.className='tag'; t.textContent = 'Tester';
       metaEl.appendChild(t);
     }
-    if(it.veces_vendido && it.veces_vendido > 0){
-      const t = document.createElement('span'); t.className='tag popular'; t.textContent = 'Vendido antes';
+    if(it.veces_vendido && it.veces_vendido > 5){
+      const t = document.createElement('span'); t.className='tag popular'; t.textContent = 'Más vendido';
       metaEl.appendChild(t);
     }
     if(it.genero){
